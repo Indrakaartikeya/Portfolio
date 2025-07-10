@@ -512,8 +512,14 @@ main {
 
 /* Add scrollbar to .service section */
 .service {
-  max-height: 300px; /* Adjust as needed */
-  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px 0 rgba(60, 60, 60, 0.10);
+  border: 1.5px solid #e0e0e0;
+  padding: 24px 18px 18px 18px;
+  margin: 24px 0 24px 0;
+  overflow: auto;
+  max-height: 340px;
 }
 .service::-webkit-scrollbar {
   width: 8px;
