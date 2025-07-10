@@ -519,7 +519,7 @@ main {
   padding: 24px 18px 18px 18px;
   margin: 24px 0 24px 0;
   overflow: auto;
-  max-height: 540px;
+  max-height: 640px;
 }
 .service::-webkit-scrollbar {
   width: 8px;
