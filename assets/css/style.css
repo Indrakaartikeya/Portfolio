@@ -155,10 +155,7 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body {
-  background: url('C:\Users\indra\Downloads\background.avif') no-repeat center center fixed;
-  background-size: cover;
-}
+body { background: var(--smoky-black); }
 
 
 
