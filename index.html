@@ -1128,50 +1128,67 @@
       opacity: 1;
     }
   </style>
-  <script>
-    // Slideshow for .clients
-    document.addEventListener('DOMContentLoaded', function () {
-      const clientsSlideshow = document.getElementById('clients-slideshow');
-      if (clientsSlideshow) {
-        const items = clientsSlideshow.querySelectorAll('.clients-item');
-        let current = 0;
-        let slideInterval;
-        let visibleCount = Math.min(7, items.length);
+  <style>
+  #clients-slideshow {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+</style>
 
-        function showSlide() {
-          const slideWidth = items[0].offsetWidth + 40;
-          clientsSlideshow.style.transform = `translateX(-${current * slideWidth}px)`;
-        }
+<script>
+  // Slideshow for .clients
+  document.addEventListener('DOMContentLoaded', function () {
+    const clientsSlideshow = document.getElementById('clients-slideshow');
+    if (!clientsSlideshow) return;
 
-        function nextSlide() {
-          // If only as many or fewer items as visible, don't move
-          if (items.length <= visibleCount) return;
-          current = (current + 1) % (items.length - visibleCount + 1);
-          showSlide();
-        }
+    const items = clientsSlideshow.querySelectorAll('.clients-item');
+    if (items.length === 0) return;
 
-        // Set wrapper width to fit visibleCount
-        function setWrapperWidth() {
-          const slideWidth = items[0].offsetWidth + 40;
-          visibleCount = Math.min(7, items.length); // recalc on resize
-          clientsSlideshow.parentElement.style.width = (slideWidth * visibleCount - 40) + 'px';
-          // If current is out of bounds after resize, reset
-          if (current > items.length - visibleCount) {
-            current = 0;
-            showSlide();
-          }
-        }
+    let current = 0;
+    let slideInterval;
+    let visibleCount = Math.min(7, items.length);
 
-        setWrapperWidth();
-        window.addEventListener('resize', setWrapperWidth);
+    function getSlideWidth() {
+      return items[0].getBoundingClientRect().width + 40; // 40px assumed gap
+    }
+
+    function showSlide() {
+      const slideWidth = getSlideWidth();
+      clientsSlideshow.style.transform = `translateX(-${current * slideWidth}px)`;
+    }
+
+    function nextSlide() {
+      if (items.length <= visibleCount) return;
+      current = (current + 1) % (items.length - visibleCount + 1);
+      showSlide();
+    }
+
+    function setWrapperWidth() {
+      const slideWidth = getSlideWidth();
+      visibleCount = Math.min(7, items.length); // recalc on resize
+      clientsSlideshow.parentElement.style.width = (slideWidth * visibleCount - 40) + 'px';
+
+      if (current > items.length - visibleCount) {
+        current = 0;
         showSlide();
-
-        // Clear any previous interval if re-initialized
-        if (slideInterval) clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 5000);
       }
+    }
+
+    setWrapperWidth();
+    window.addEventListener('resize', setWrapperWidth);
+    showSlide();
+
+    // Clear any previous interval if re-initialized
+    if (slideInterval) clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+
+    // Pause on hover
+    clientsSlideshow.parentElement.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    clientsSlideshow.parentElement.addEventListener('mouseleave', () => {
+      slideInterval = setInterval(nextSlide, 5000);
     });
-  </script>
+  });
+</script>
 
   <!--
     - ionicon link
