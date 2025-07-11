@@ -1064,8 +1064,50 @@
       scrollbar-width: none; /* Firefox */
       -ms-overflow-style: none; /* IE 10+ */
     }
-    .clients .clients-list.slideshow::-webkit-scrollbar {
+    /* Hide scrollbar for .clients (cross-browser) */
+    .clients {
+      height: 120px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      margin: 0 auto 32px auto;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+    .clients::-webkit-scrollbar {
       display: none;
+    }
+    .clients .clients-list.slideshow {
+      display: flex;
+      gap: 40px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      transition: transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
+      height: 120px;
+      align-items: center;
+    }
+    .clients .clients-item {
+      flex: 0 0 auto;
+      width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .clients .clients-item img {
+      max-width: 100px;
+      max-height: 80px;
+      object-fit: contain;
+      filter: grayscale(0.2);
+      opacity: 0.85;
+      transition: filter 0.3s, opacity 0.3s;
+    }
+    .clients .clients-item img:hover {
+      filter: grayscale(0);
+      opacity: 1;
     }
     .clientsdirect .clients-item {
       flex: 0 0 auto;
@@ -1088,8 +1130,33 @@
     }
   </style>
   <script>
-    // Slideshow for .clientsdirect (no scrollbar, no sidebar, all images slide)
+    // Slideshow for .clients
     document.addEventListener('DOMContentLoaded', function () {
+      // CLIENTS SLIDESHOW
+      const clientsSlideshow = document.querySelector('.clients .clients-list.slideshow');
+      if (clientsSlideshow) {
+        const items = clientsSlideshow.querySelectorAll('.clients-item');
+        let current = 0;
+        const visibleCount = Math.min(6, items.length);
+        function showSlide() {
+          const slideWidth = items[0].offsetWidth + 40;
+          clientsSlideshow.style.transform = `translateX(-${current * slideWidth}px)`;
+        }
+        function nextSlide() {
+          current = (current + 1) % (items.length - visibleCount + 1);
+          showSlide();
+        }
+        // Set wrapper width to fit visibleCount
+        function setWrapperWidth() {
+          const slideWidth = items[0].offsetWidth + 40;
+          clientsSlideshow.parentElement.style.width = (slideWidth * visibleCount - 40) + 'px';
+        }
+        setWrapperWidth();
+        window.addEventListener('resize', setWrapperWidth);
+        showSlide();
+        setInterval(nextSlide, 2000);
+      }
+      // CLIENTSDIRECT SLIDESHOW (unchanged)
       const slideshow = document.getElementById('clientsdirect-slideshow');
       if (!slideshow) return;
       const items = slideshow.querySelectorAll('.clients-item');
