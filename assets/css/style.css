@@ -763,10 +763,7 @@ main {
  * #clients 
  */
 
-.clients {
-  margin-bottom: 15px;
-  height: 50px;
-}
+.clients { margin-bottom: 10px; }
 
 .clients-list {
   display: flex;
