@@ -346,10 +346,10 @@
           - clients
         -->
 
-        <section class="clients">
+        <section class="clientsdirect">
           <h3 class="h3 clients-title">Platforms</h3>
-          <div class="clients-slideshow-wrapper">
-            <ul class="clients-list slideshow" id="clients-slideshow">
+          <div class="clientsdirect-slideshow-wrapper">
+            <ul class="clients-list slideshow" id="clientsdirect-slideshow">
               <li class="clients-item"><a href="#"><img src="./assets/images/logo-1.png" alt="client logo"></a></li>
               <li class="clients-item"><a href="#"><img src="./assets/images/logo-2.png" alt="client logo"></a></li>
               <li class="clients-item"><a href="#"><img src="./assets/images/logo-3.png" alt="client logo"></a></li>
@@ -1048,38 +1048,28 @@
   -->
   <script src="./assets/js/script.js"></script>
   <style>
-    .clients-slideshow-wrapper {
+    .clientsdirect-slideshow-wrapper {
       width: 100%;
       overflow: hidden;
       position: relative;
       margin: 0 auto;
-      height: 120px;
-      min-height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .clients .clients-list.slideshow {
+    .clientsdirect .clients-list.slideshow {
       display: flex;
       gap: 40px;
       padding: 0;
       margin: 0;
       list-style: none;
       transition: transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE 10+ */
     }
-    .clients .clients-list.slideshow::-webkit-scrollbar {
-      display: none;
-    }
-    .clients .clients-item {
+    .clientsdirect .clients-item {
       flex: 0 0 auto;
       width: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .clients .clients-item img {
+    .clientsdirect .clients-item img {
       max-width: 100px;
       max-height: 60px;
       object-fit: contain;
@@ -1087,31 +1077,31 @@
       opacity: 0.85;
       transition: filter 0.3s, opacity 0.3s;
     }
-    .clients .clients-item img:hover {
+    .clientsdirect .clients-item img:hover {
       filter: grayscale(0);
       opacity: 1;
     }
   </style>
   <script>
-    // Slideshow for .clients (no scrollbar, no sidebar, all images slide)
+    // Slideshow for .clientsdirect (no scrollbar, no sidebar, all images slide)
     document.addEventListener('DOMContentLoaded', function () {
-      const slideshow = document.getElementById('clients-slideshow');
+      const slideshow = document.getElementById('clientsdirect-slideshow');
       if (!slideshow) return;
       const items = slideshow.querySelectorAll('.clients-item');
       let current = 0;
-      const visibleCount = items.length; // Show all at a time
+      const visibleCount = Math.min(4, items.length); // Show 4 at a time
       function showSlide() {
         const slideWidth = items[0].offsetWidth + 40; // 40px gap
         slideshow.style.transform = `translateX(-${current * slideWidth}px)`;
       }
       function nextSlide() {
-        current = (current + 1) % items.length;
+        current = (current + 1) % (items.length - visibleCount + 1);
         showSlide();
       }
-      // Set wrapper width to fit all items
+      // Set wrapper width to fit visibleCount
       function setWrapperWidth() {
         const slideWidth = items[0].offsetWidth + 40;
-        slideshow.parentElement.style.width = (slideWidth * items.length - 40) + 'px';
+        slideshow.parentElement.style.width = (slideWidth * visibleCount - 40) + 'px';
       }
       setWrapperWidth();
       window.addEventListener('resize', setWrapperWidth);
