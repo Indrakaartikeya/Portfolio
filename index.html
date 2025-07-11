@@ -1135,24 +1135,40 @@
       if (clientsSlideshow) {
         const items = clientsSlideshow.querySelectorAll('.clients-item');
         let current = 0;
-        const visibleCount = Math.min(7, items.length);
+        let slideInterval;
+        let visibleCount = Math.min(7, items.length);
+
         function showSlide() {
           const slideWidth = items[0].offsetWidth + 40;
           clientsSlideshow.style.transform = `translateX(-${current * slideWidth}px)`;
         }
+
         function nextSlide() {
+          // If only as many or fewer items as visible, don't move
+          if (items.length <= visibleCount) return;
           current = (current + 1) % (items.length - visibleCount + 1);
           showSlide();
         }
+
         // Set wrapper width to fit visibleCount
         function setWrapperWidth() {
           const slideWidth = items[0].offsetWidth + 40;
+          visibleCount = Math.min(7, items.length); // recalc on resize
           clientsSlideshow.parentElement.style.width = (slideWidth * visibleCount - 40) + 'px';
+          // If current is out of bounds after resize, reset
+          if (current > items.length - visibleCount) {
+            current = 0;
+            showSlide();
+          }
         }
+
         setWrapperWidth();
         window.addEventListener('resize', setWrapperWidth);
         showSlide();
-        setInterval(nextSlide, 5000);
+
+        // Clear any previous interval if re-initialized
+        if (slideInterval) clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
       }
     });
   </script>
