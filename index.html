@@ -1129,14 +1129,24 @@
     }
   </style>
   <style>
+  .clients-wrapper {
+    overflow: hidden;
+  }
+
   #clients-slideshow {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    will-change: transform;
+  }
+
+  .clients-item {
+    min-width: 150px; /* adjust as needed */
+    margin-right: 40px;
+    flex-shrink: 0;
   }
 </style>
 
 <script>
-  // Slideshow for .clients
   document.addEventListener('DOMContentLoaded', function () {
     const clientsSlideshow = document.getElementById('clients-slideshow');
     if (!clientsSlideshow) return;
@@ -1149,7 +1159,7 @@
     let visibleCount = Math.min(7, items.length);
 
     function getSlideWidth() {
-      return items[0].getBoundingClientRect().width + 40; // 40px assumed gap
+      return items[0].getBoundingClientRect().width + 40;
     }
 
     function showSlide() {
@@ -1165,7 +1175,7 @@
 
     function setWrapperWidth() {
       const slideWidth = getSlideWidth();
-      visibleCount = Math.min(7, items.length); // recalc on resize
+      visibleCount = Math.min(7, items.length);
       clientsSlideshow.parentElement.style.width = (slideWidth * visibleCount - 40) + 'px';
 
       if (current > items.length - visibleCount) {
@@ -1178,11 +1188,9 @@
     window.addEventListener('resize', setWrapperWidth);
     showSlide();
 
-    // Clear any previous interval if re-initialized
     if (slideInterval) clearInterval(slideInterval);
     slideInterval = setInterval(nextSlide, 5000);
 
-    // Pause on hover
     clientsSlideshow.parentElement.addEventListener('mouseenter', () => clearInterval(slideInterval));
     clientsSlideshow.parentElement.addEventListener('mouseleave', () => {
       slideInterval = setInterval(nextSlide, 5000);
