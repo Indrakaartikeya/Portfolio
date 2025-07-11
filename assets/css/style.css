@@ -763,14 +763,12 @@ main {
  * #clients 
  */
 
-
 .clients { margin-bottom: 15px; }
 
-/* Centered client logos */
 .clients-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 15px;
   margin: 0 -15px;
   padding: 25px;
@@ -780,7 +778,7 @@ main {
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: 25px;
-
+}
 
 .clients-item {
   min-width: 50%;
