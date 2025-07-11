@@ -1151,15 +1151,16 @@
     const clientsSlideshow = document.getElementById('clients-slideshow');
     if (!clientsSlideshow) return;
 
-    const items = clientsSlideshow.querySelectorAll('.clients-item');
+    let items = clientsSlideshow.querySelectorAll('.clients-item');
     if (items.length === 0) return;
 
     let current = 0;
-    let slideInterval;
+    let slideInterval = null;
     let visibleCount = Math.min(7, items.length);
 
     function getSlideWidth() {
-      return items[0].getBoundingClientRect().width + 40;
+      // Use offsetWidth for more consistent results
+      return items[0].offsetWidth + 40;
     }
 
     function showSlide() {
@@ -1174,10 +1175,11 @@
     }
 
     function setWrapperWidth() {
-      const slideWidth = getSlideWidth();
+      // Re-query items in case of DOM changes
+      items = clientsSlideshow.querySelectorAll('.clients-item');
       visibleCount = Math.min(7, items.length);
+      const slideWidth = getSlideWidth();
       clientsSlideshow.parentElement.style.width = (slideWidth * visibleCount - 40) + 'px';
-
       if (current > items.length - visibleCount) {
         current = 0;
         showSlide();
@@ -1188,12 +1190,18 @@
     window.addEventListener('resize', setWrapperWidth);
     showSlide();
 
-    if (slideInterval) clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, 5000);
-
-    clientsSlideshow.parentElement.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    clientsSlideshow.parentElement.addEventListener('mouseleave', () => {
+    function startInterval() {
+      if (slideInterval) clearInterval(slideInterval);
       slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    startInterval();
+
+    clientsSlideshow.parentElement.addEventListener('mouseenter', () => {
+      if (slideInterval) clearInterval(slideInterval);
+    });
+    clientsSlideshow.parentElement.addEventListener('mouseleave', () => {
+      startInterval();
     });
   });
 </script>
