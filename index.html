@@ -347,17 +347,49 @@
         -->
 
         <section class="clients">
+
           <h3 class="h3 clients-title">Clients</h3>
-          <div class="clients-slideshow-wrapper">
-            <ul class="clients-list slideshow" id="clients-slideshow">
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo-1-color.png" alt="client logo"></a></li>
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo-2-color.png" alt="client logo"></a></li>
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo-3-color.png" alt="client logo"></a></li>
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo-4-color.png" alt="client logo"></a></li>
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo-5-color.png" alt="client logo"></a></li>
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo-6-color.png" alt="client logo"></a></li>
-            </ul>
-          </div>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-1-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-2-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-3-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-4-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-5-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-6-color.png" alt="client logo">
+              </a>
+            </li>
+
+          </ul>
+
         </section>
 
       </article>
@@ -1047,69 +1079,6 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
-  <style>
-    .clients-slideshow-wrapper {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-      margin: 0 auto;
-      /* Remove scrollbar */
-    }
-    .clients-list.slideshow {
-      display: flex;
-      gap: 40px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      transition: transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
-    }
-    .clients-item {
-      flex: 0 0 auto;
-      width: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .clients-item img {
-      max-width: 100px;
-      max-height: 60px;
-      object-fit: contain;
-      filter: grayscale(0.2);
-      opacity: 0.85;
-      transition: filter 0.3s, opacity 0.3s;
-    }
-    .clients-item img:hover {
-      filter: grayscale(0);
-      opacity: 1;
-    }
-  </style>
-  <script>
-    // Automatic fading/cycling slideshow for clients (no scrollbar, all images visible one at a time)
-    document.addEventListener('DOMContentLoaded', function () {
-      const slideshow = document.getElementById('clients-slideshow');
-      if (!slideshow) return;
-      const items = slideshow.querySelectorAll('.clients-item');
-      let current = 0;
-      const visibleCount = Math.min(4, items.length); // Show 4 at a time
-      function showSlide() {
-        const slideWidth = items[0].offsetWidth + 40; // 40px gap
-        slideshow.style.transform = `translateX(-${current * slideWidth}px)`;
-      }
-      function nextSlide() {
-        current = (current + 1) % (items.length - visibleCount + 1);
-        showSlide();
-      }
-      // Set wrapper width to fit visibleCount
-      function setWrapperWidth() {
-        const slideWidth = items[0].offsetWidth + 40;
-        slideshow.parentElement.style.width = (slideWidth * visibleCount - 40) + 'px';
-      }
-      setWrapperWidth();
-      window.addEventListener('resize', setWrapperWidth);
-      showSlide();
-      setInterval(nextSlide, 2000);
-    });
-  </script>
 
   <!--
     - ionicon link
