@@ -1054,15 +1054,6 @@
       position: relative;
       margin: 0 auto;
     }
-    /* Hide scrollbar for .clients (cross-browser) */
-    .clients {
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE and Edge */
-      overflow: hidden;
-    }
-    .clients::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
-    }
     .clientsdirect .clients-list.slideshow {
       display: flex;
       gap: 40px;
@@ -1070,6 +1061,11 @@
       margin: 0;
       list-style: none;
       transition: transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+    }
+    .clients .clients-list.slideshow::-webkit-scrollbar {
+      display: none;
     }
     .clientsdirect .clients-item {
       flex: 0 0 auto;
