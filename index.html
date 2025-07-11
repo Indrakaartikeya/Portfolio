@@ -1053,6 +1053,11 @@
       overflow: hidden;
       position: relative;
       margin: 0 auto;
+      height: 120px;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .clients .clients-list.slideshow {
       display: flex;
@@ -1094,19 +1099,19 @@
       if (!slideshow) return;
       const items = slideshow.querySelectorAll('.clients-item');
       let current = 0;
-      const visibleCount = Math.min(4, items.length); // Show 4 at a time
+      const visibleCount = items.length; // Show all at a time
       function showSlide() {
         const slideWidth = items[0].offsetWidth + 40; // 40px gap
         slideshow.style.transform = `translateX(-${current * slideWidth}px)`;
       }
       function nextSlide() {
-        current = (current + 1) % (items.length - visibleCount + 1);
+        current = (current + 1) % items.length;
         showSlide();
       }
-      // Set wrapper width to fit visibleCount
+      // Set wrapper width to fit all items
       function setWrapperWidth() {
         const slideWidth = items[0].offsetWidth + 40;
-        slideshow.parentElement.style.width = (slideWidth * visibleCount - 40) + 'px';
+        slideshow.parentElement.style.width = (slideWidth * items.length - 40) + 'px';
       }
       setWrapperWidth();
       window.addEventListener('resize', setWrapperWidth);
