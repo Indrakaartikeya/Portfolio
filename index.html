@@ -346,10 +346,10 @@
           - clients
         -->
 
-        <section class="clientsdirect">
+        <section class="clients">
           <h3 class="h3 clients-title">Platforms</h3>
-          <div class="clientsdirect-slideshow-wrapper">
-            <ul class="clients-list slideshow" id="clientsdirect-slideshow">
+          <div class="clients-slideshow-wrapper">
+            <ul class="clients-list slideshow" id="clients-slideshow">
               <li class="clients-item"><a href="#"><img src="./assets/images/logo-1.png" alt="client logo"></a></li>
               <li class="clients-item"><a href="#"><img src="./assets/images/logo-2.png" alt="client logo"></a></li>
               <li class="clients-item"><a href="#"><img src="./assets/images/logo-3.png" alt="client logo"></a></li>
@@ -1048,13 +1048,13 @@
   -->
   <script src="./assets/js/script.js"></script>
   <style>
-    .clientsdirect-slideshow-wrapper {
+    .clients-slideshow-wrapper {
       width: 100%;
       overflow: hidden;
       position: relative;
       margin: 0 auto;
     }
-    .clientsdirect .clients-list.slideshow {
+    .clients .clients-list.slideshow {
       display: flex;
       gap: 40px;
       padding: 0;
@@ -1062,14 +1062,14 @@
       list-style: none;
       transition: transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
     }
-    .clientsdirect .clients-item {
+    .clients .clients-item {
       flex: 0 0 auto;
       width: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .clientsdirect .clients-item img {
+    .clients .clients-item img {
       max-width: 100px;
       max-height: 60px;
       object-fit: contain;
@@ -1077,15 +1077,15 @@
       opacity: 0.85;
       transition: filter 0.3s, opacity 0.3s;
     }
-    .clientsdirect .clients-item img:hover {
+    .clients .clients-item img:hover {
       filter: grayscale(0);
       opacity: 1;
     }
   </style>
   <script>
-    // Slideshow for .clientsdirect (no scrollbar, no sidebar, all images slide)
+    // Slideshow for .clients (no scrollbar, no sidebar, all images slide)
     document.addEventListener('DOMContentLoaded', function () {
-      const slideshow = document.getElementById('clientsdirect-slideshow');
+      const slideshow = document.getElementById('clients-slideshow');
       if (!slideshow) return;
       const items = slideshow.querySelectorAll('.clients-item');
       let current = 0;
