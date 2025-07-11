@@ -410,14 +410,73 @@
         </header>
 
         <!-- Resume Download and Preview -->
-        <section class="resume-download" style="margin-bottom: 24px;">
-          <h3 class="h3">My Resume</h3>
-          <div style="display: flex; align-items: center; gap: 18px; background: var(--eerie-black-2); border: 1px solid var(--jet); border-radius: 10px; padding: 18px 20px; margin-bottom: 0;">
-            <span style="font-weight: 500; color: var(--orange-yellow-crayola); font-size: 1.1em;">Indra Kaartikeya Resume (jpg)</span>
-            <a href="D:\persional portfolio\assets\images\resume.jpg" target="_blank" rel="noopener" style="color: var(--white-2); background: var(--orange-yellow-crayola); font-weight: 500; border-radius: 6px; padding: 7px 16px; text-decoration: none; transition: background 0.2s;">Preview</a>
-            <a href="D:\persional portfolio\assets\images\resume.jpg" download style="color: var(--orange-yellow-crayola); border: 1px solid var(--orange-yellow-crayola); font-weight: 500; border-radius: 6px; padding: 7px 16px; text-decoration: none; transition: background 0.2s; background: transparent;">Download</a>
-          </div>
-        </section>
+        <section class="resume-download" style="margin-bottom: 24px; font-family: sans-serif;">
+  <h3 class="h3" style="font-size: 1.5em; margin-bottom: 12px; color: var(--white-2);">My Resume</h3>
+
+  <div style="
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    background: var(--eerie-black-2);
+    border: 1px solid var(--jet);
+    border-radius: 10px;
+    padding: 18px 20px;
+    color: var(--white-2);
+  ">
+    <span style="
+      font-weight: 500;
+      color: var(--orange-yellow-crayola);
+      font-size: 1.1em;
+      flex-grow: 1;
+    ">
+      Indra Kaartikeya Resume (JPG Format)
+    </span>
+
+    <a href="./assets/resume.jpg"
+       target="_blank"
+       rel="noopener"
+       aria-label="Preview Indra Kaartikeya Resume in a new tab"
+       style="
+         color: var(--white-2);
+         background: var(--orange-yellow-crayola);
+         font-weight: 500;
+         border-radius: 6px;
+         padding: 7px 16px;
+         text-decoration: none;
+         transition: background 0.2s;
+       "
+       onmouseover="this.style.background='rgba(255, 193, 7, 0.9)'"
+       onmouseout="this.style.background='var(--orange-yellow-crayola)'"
+    >
+      Preview
+    </a>
+
+    <a href="./assets/resume.jpg"
+       download
+       aria-label="Download Indra Kaartikeya Resume"
+       style="
+         color: var(--orange-yellow-crayola);
+         border: 1px solid var(--orange-yellow-crayola);
+         font-weight: 500;
+         border-radius: 6px;
+         padding: 7px 16px;
+         text-decoration: none;
+         background: transparent;
+         transition: background 0.2s;
+       "
+       onmouseover="this.style.background='rgba(255, 193, 7, 0.1)'"
+       onmouseout="this.style.background='transparent'"
+    >
+      Download
+    </a>
+  </div>
+
+  <p style="margin-top: 8px; font-size: 0.9em; color: var(--white-2); opacity: 0.8;">
+    Note: The resume is in image format (JPG). If you need a PDF version, feel free to contact me.
+  </p>
+</section>
+
 
         <section class="timeline">
 
