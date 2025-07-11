@@ -1054,6 +1054,15 @@
       position: relative;
       margin: 0 auto;
     }
+    /* Hide scrollbar for .clients (cross-browser) */
+    .clients {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+      overflow: hidden;
+    }
+    .clients::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
     .clientsdirect .clients-list.slideshow {
       display: flex;
       gap: 40px;
@@ -1089,7 +1098,7 @@
       if (!slideshow) return;
       const items = slideshow.querySelectorAll('.clients-item');
       let current = 0;
-      const visibleCount = Math.min(4, items.length); // Show 4 at a time
+      const visibleCount = Math.min(6, items.length); // Show 4 at a time
       function showSlide() {
         const slideWidth = items[0].offsetWidth + 40; // 40px gap
         slideshow.style.transform = `translateX(-${current * slideWidth}px)`;
