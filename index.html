@@ -345,11 +345,10 @@
         <!--
           - clients
         -->
-
-        <section class="clientsdirect">
-          <h3 class="h3 clients-title">Platforms</h3>
-          <div class="clientsdirect-slideshow-wrapper">
-            <ul class="clients-list slideshow" id="clientsdirect-slideshow">
+        <section class="clients">
+          <h3 class="h3 clients-title">Clients</h3>
+          <div class="clients-slideshow-wrapper" style="width:100%;overflow:hidden;position:relative;margin:0 auto;">
+            <ul class="clients-list slideshow" id="clients-slideshow" style="display:flex;gap:40px;padding:0;margin:0;list-style:none;transition:transform 0.6s cubic-bezier(0.4,0.2,0.2,1);">
               <li class="clients-item"><a href="#"><img src="./assets/images/logo-1.png" alt="client logo"></a></li>
               <li class="clients-item"><a href="#"><img src="./assets/images/logo-2.png" alt="client logo"></a></li>
               <li class="clients-item"><a href="#"><img src="./assets/images/logo-3.png" alt="client logo"></a></li>
@@ -1132,8 +1131,7 @@
   <script>
     // Slideshow for .clients
     document.addEventListener('DOMContentLoaded', function () {
-      // CLIENTS SLIDESHOW
-      const clientsSlideshow = document.querySelector('.clients .clients-list.slideshow');
+      const clientsSlideshow = document.getElementById('clients-slideshow');
       if (clientsSlideshow) {
         const items = clientsSlideshow.querySelectorAll('.clients-item');
         let current = 0;
@@ -1156,29 +1154,6 @@
         showSlide();
         setInterval(nextSlide, 2000);
       }
-      // CLIENTSDIRECT SLIDESHOW (unchanged)
-      const slideshow = document.getElementById('clientsdirect-slideshow');
-      if (!slideshow) return;
-      const items = slideshow.querySelectorAll('.clients-item');
-      let current = 0;
-      const visibleCount = Math.min(6, items.length); // Show 4 at a time
-      function showSlide() {
-        const slideWidth = items[0].offsetWidth + 40; // 40px gap
-        slideshow.style.transform = `translateX(-${current * slideWidth}px)`;
-      }
-      function nextSlide() {
-        current = (current + 1) % (items.length - visibleCount + 1);
-        showSlide();
-      }
-      // Set wrapper width to fit visibleCount
-      function setWrapperWidth() {
-        const slideWidth = items[0].offsetWidth + 40;
-        slideshow.parentElement.style.width = (slideWidth * visibleCount - 40) + 'px';
-      }
-      setWrapperWidth();
-      window.addEventListener('resize', setWrapperWidth);
-      showSlide();
-      setInterval(nextSlide, 2000);
     });
   </script>
 
