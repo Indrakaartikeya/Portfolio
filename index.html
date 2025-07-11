@@ -1135,7 +1135,7 @@
       if (clientsSlideshow) {
         const items = clientsSlideshow.querySelectorAll('.clients-item');
         let current = 0;
-        const visibleCount = Math.min(6, items.length);
+        const visibleCount = Math.min(7, items.length);
         function showSlide() {
           const slideWidth = items[0].offsetWidth + 40;
           clientsSlideshow.style.transform = `translateX(-${current * slideWidth}px)`;
