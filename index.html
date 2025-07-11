@@ -347,49 +347,17 @@
         -->
 
         <section class="clients">
-
           <h3 class="h3 clients-title">Clients</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
-              </a>
-            </li>
-
-          </ul>
-
+          <div class="clients-slideshow-container">
+            <ul class="clients-list slideshow" id="clients-slideshow">
+              <li class="clients-item"><a href="#"><img src="./assets/images/logo-1-color.png" alt="client logo"></a></li>
+              <li class="clients-item"><a href="#"><img src="./assets/images/logo-2-color.png" alt="client logo"></a></li>
+              <li class="clients-item"><a href="#"><img src="./assets/images/logo-3-color.png" alt="client logo"></a></li>
+              <li class="clients-item"><a href="#"><img src="./assets/images/logo-4-color.png" alt="client logo"></a></li>
+              <li class="clients-item"><a href="#"><img src="./assets/images/logo-5-color.png" alt="client logo"></a></li>
+              <li class="clients-item"><a href="#"><img src="./assets/images/logo-6-color.png" alt="client logo"></a></li>
+            </ul>
+          </div>
         </section>
 
       </article>
@@ -1079,6 +1047,30 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+  <script>
+    // Automatic moving slideshow for clients
+    document.addEventListener('DOMContentLoaded', function () {
+      const slideshow = document.getElementById('clients-slideshow');
+      if (!slideshow) return;
+      let scrollAmount = 0;
+      const slideSpeed = 1; // px per frame
+      const interval = 16; // ms per frame (~60fps)
+      // Duplicate the list for infinite effect
+      slideshow.innerHTML += slideshow.innerHTML;
+      function autoSlide() {
+        scrollAmount += slideSpeed;
+        if (scrollAmount >= slideshow.scrollWidth / 2) {
+          scrollAmount = 0;
+        }
+        slideshow.style.transform = `translateX(-${scrollAmount}px)`;
+        requestAnimationFrame(autoSlide);
+      }
+      slideshow.style.display = 'flex';
+      slideshow.style.transition = 'none';
+      slideshow.parentElement.style.overflow = 'hidden';
+      autoSlide();
+    });
+  </script>
 
   <!--
     - ionicon link
