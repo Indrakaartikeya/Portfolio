@@ -1061,6 +1061,11 @@
       margin: 0;
       list-style: none;
       transition: transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+    }
+    .clients .clients-list.slideshow::-webkit-scrollbar {
+      display: none;
     }
     .clients .clients-item {
       flex: 0 0 auto;
