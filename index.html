@@ -345,18 +345,51 @@
         <!--
           - clients
         -->
+
         <section class="clients">
-          <h3 class="h3 clients-title">Clients</h3>
-          <div class="clients-slideshow-wrapper" style="width:100%;overflow:hidden;position:relative;margin:0 auto;">
-            <ul class="clients-list slideshow" id="clients-slideshow" style="display:flex;gap:40px;padding:0;margin:0;list-style:none;transition:transform 0.6s cubic-bezier(0.4,0.2,0.2,1);">
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo-1.png" alt="client logo"></a></li>
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo-2.png" alt="client logo"></a></li>
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo-3.png" alt="client logo"></a></li>
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo-4.png" alt="client logo"></a></li>
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo5.png" alt="client logo"></a></li>
-              <li class="clients-item"><a href="#"><img src="./assets/images/logo6.png" alt="client logo"></a></li>
-            </ul>
-          </div>
+
+          <h3 class="h3 clients-title">Platforms</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-1.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-2.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-3.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-4.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo5.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo6.png" alt="client logo">
+              </a>
+            </li>
+
+          </ul>
+
         </section>
 
       </article>
@@ -1046,64 +1079,6 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
-  <style>
-    .clients {
-      height: 180px;
-      overflow-x: auto;
-      position: relative;
-      width: 100%;
-      margin: 0 auto 32px auto;
-      background: rgba(255,255,255,0.05);
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      scrollbar-width: thin; /* Firefox */
-      -ms-overflow-style: auto; /* IE and Edge */
-    }
-    .clients .clients-list {
-      display: flex;
-      gap: 40px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      height: 180px;
-      align-items: center;
-    }
-    .clients .clients-item {
-      flex: 0 0 auto;
-      width: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .clients .clients-item img {
-      max-width: 100px;
-      max-height: 80px;
-      object-fit: contain;
-      filter: grayscale(0.2);
-      opacity: 0.85;
-      transition: filter 0.3s, opacity 0.3s;
-    }
-    .clients .clients-item img:hover {
-      filter: grayscale(0);
-      opacity: 1;
-    }
-    /* Show scrollbar for all browsers */
-    .clients::-webkit-scrollbar {
-      height: 8px;
-      background: #eee;
-    }
-    .clients::-webkit-scrollbar-thumb {
-      background: #bbb;
-      border-radius: 4px;
-    }
-  </style>
-  <style>
-  /* Remove old slideshow-specific styles */
-</style>
-
-<script>
-  // Slideshow removed, no JS needed for clients scroll
-</script>
 
   <!--
     - ionicon link
