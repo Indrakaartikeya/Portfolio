@@ -184,11 +184,9 @@
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>YouTube</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
@@ -817,36 +815,35 @@
 
 
 
-
       <!--
         - #YOUTUBE
       -->
 
       <article class="youtube" data-page="youtube">
-        <header style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; margin-top: 64px; margin-bottom: 24px;">
-          <img src="./assets/images/youtube-logo.png" alt="YouTube Channel Logo" style="width: 64px; height: 64px; border-radius: 50%; background: #fff; border: 2px solid #ff0000; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-          <h2 class="h2 article-title" style="margin: 0; text-align: center;">YouTube Shorts</h2>
+        <header class="youtube-header">
+          <img src="./assets/images/youtube-logo.png" alt="YouTube Channel Logo" class="youtube-logo">
+          <h2 class="h2 article-title youtube-title">YouTube Shorts</h2>
         </header>
 
-        <section class="youtube-shorts" style="margin-top: 24px; display: flex; flex-direction: row; gap: 32px;">
+        <section class="youtube-shorts">
           <!-- Shorts Sidebar -->
-          <aside style="width: 240px; min-width: 200px; max-width: 260px; background: #181818; border-radius: 12px; padding: 16px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); height: 500px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; gap: 18px;">
-            <div style="width: 200px; height: 355px; background: #000; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-              <iframe width="200" height="355" src="https://www.youtube.com/embed/SHORT_ID_1" title="YouTube Short 1" frameborder="0" allowfullscreen style="border-radius: 10px;"></iframe>
+          <aside class="youtube-shorts-sidebar">
+            <div class="youtube-short-frame">
+              <iframe width="200" height="355" src="https://www.youtube.com/embed/SHORT_ID_1" title="YouTube Short 1" frameborder="0" allowfullscreen class="youtube-short-iframe"></iframe>
             </div>
-            <div style="width: 200px; height: 355px; background: #000; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-              <iframe width="200" height="355" src="https://www.youtube.com/embed/SHORT_ID_2" title="YouTube Short 2" frameborder="0" allowfullscreen style="border-radius: 10px;"></iframe>
+            <div class="youtube-short-frame">
+              <iframe width="200" height="355" src="https://www.youtube.com/embed/SHORT_ID_2" title="YouTube Short 2" frameborder="0" allowfullscreen class="youtube-short-iframe"></iframe>
             </div>
-            <div style="width: 200px; height: 355px; background: #000; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-              <iframe width="200" height="355" src="https://www.youtube.com/embed/SHORT_ID_3" title="YouTube Short 3" frameborder="0" allowfullscreen style="border-radius: 10px;"></iframe>
+            <div class="youtube-short-frame">
+              <iframe width="200" height="355" src="https://www.youtube.com/embed/SHORT_ID_3" title="YouTube Short 3" frameborder="0" allowfullscreen class="youtube-short-iframe"></iframe>
             </div>
-            <div style="width: 200px; height: 355px; background: #000; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-              <iframe width="200" height="355" src="https://www.youtube.com/embed/SHORT_ID_4" title="YouTube Short 4" frameborder="0" allowfullscreen style="border-radius: 10px;"></iframe>
+            <div class="youtube-short-frame">
+              <iframe width="200" height="355" src="https://www.youtube.com/embed/SHORT_ID_4" title="YouTube Short 4" frameborder="0" allowfullscreen class="youtube-short-iframe"></iframe>
             </div>
             <!-- Add more shorts as needed -->
           </aside>
           <!-- Main content area (optional, can add channel info or leave empty) -->
-          <div style="flex: 1;"></div>
+          <div class="youtube-shorts-main"></div>
         </section>
       </article>
 

@@ -1790,6 +1790,72 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .blog-banner-box { height: 230px; }
+  /* YouTube Section Styles */
+.youtube-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+
+.youtube-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ff0000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.youtube-title {
+  margin: 0;
+  text-align: center;
+}
+
+.youtube-shorts {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.youtube-shorts-sidebar {
+  width: 240px;
+  min-width: 200px;
+  max-width: 260px;
+  background: #181818;
+  border-radius: 12px;
+  padding: 16px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.youtube-short-frame {
+  width: 200px;
+  height: 355px;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.youtube-short-iframe {
+  border-radius: 10px;
+}
+
+.youtube-shorts-main {
+  flex: 1;
+}
 
 }
 
