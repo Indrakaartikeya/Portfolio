@@ -1,3 +1,45 @@
+/* YouTube Shorts Row - Horizontal Scroll */
+.youtube-shorts-row {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.youtube-shorts-scroll {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scrollbar-color: #ff0000 #181818;
+  scrollbar-width: thin;
+  max-width: 100%;
+}
+
+.youtube-shorts-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+.youtube-shorts-scroll::-webkit-scrollbar-thumb {
+  background: #ff0000;
+  border-radius: 8px;
+}
+.youtube-shorts-scroll::-webkit-scrollbar-track {
+  background: #181818;
+  border-radius: 8px;
+}
+
+.youtube-short-frame {
+  min-width: 200px;
+  height: 355px;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
 /*-----------------------------------*\
   #style.css
 \*-----------------------------------*/
