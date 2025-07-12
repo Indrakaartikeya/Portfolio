@@ -393,6 +393,20 @@
 
       </article>
 
+    <!-- Project Modal Popup -->
+    <div id="project-modal" class="modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center;">
+      <div class="modal-content" style="background:#222; color:#fff; border-radius:10px; max-width:500px; width:90vw; margin:auto; padding:32px 24px; position:relative; box-shadow:0 8px 32px rgba(0,0,0,0.3);">
+        <span class="close-modal" style="position:absolute; top:16px; right:20px; font-size:2em; cursor:pointer; color:#fff;">&times;</span>
+        <img id="modal-image" src="" alt="Project Image" style="width:100%; border-radius:8px; margin-bottom:18px;">
+        <h2 id="modal-title" style="margin-bottom:8px;"></h2>
+        <div style="margin-bottom:8px;">
+          <span id="modal-category" style="font-size:0.95em; color:#ffb742; margin-right:10px;"></span>
+          <span id="modal-date" style="font-size:0.95em; color:#aaa;"></span>
+        </div>
+        <p id="modal-description" style="font-size:1.08em; line-height:1.6;"></p>
+      </div>
+    </div>
+
 
 
 
@@ -883,168 +897,144 @@
                   <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
                 </figure>
 
+            <li class="blog-post-item">
+              <a href="#" class="open-project-modal" 
+                 data-title="Design conferences in 2022"
+                 data-image="./assets/images/blog-1.jpg"
+                 data-category="Design"
+                 data-date="2022-02-23"
+                 data-description="Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                </figure>
                 <div class="blog-content">
-
                   <div class="blog-meta">
                     <p class="blog-category">Design</p>
-
                     <span class="dot"></span>
-
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
-
                   <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
+                  <p class="blog-text">Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
               <a href="#">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
                 </figure>
 
+            <li class="blog-post-item">
+              <a href="#" class="open-project-modal" 
+                 data-title="Best fonts every designer"
+                 data-image="./assets/images/blog-2.jpg"
+                 data-category="Design"
+                 data-date="2022-02-23"
+                 data-description="Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                </figure>
                 <div class="blog-content">
-
                   <div class="blog-meta">
                     <p class="blog-category">Design</p>
-
                     <span class="dot"></span>
-
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
-
                   <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
+                  <p class="blog-text">Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.</p>
               <a href="#">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
                 </figure>
 
+            <li class="blog-post-item">
+              <a href="#" class="open-project-modal" 
+                 data-title="Design digest #80"
+                 data-image="./assets/images/blog-3.jpg"
+                 data-category="Design"
+                 data-date="2022-02-23"
+                 data-description="Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+                </figure>
                 <div class="blog-content">
-
                   <div class="blog-meta">
                     <p class="blog-category">Design</p>
-
                     <span class="dot"></span>
-
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
-
                   <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
+                  <p class="blog-text">Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.</p>
               <a href="#">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
                 </figure>
 
+            <li class="blog-post-item">
+              <a href="#" class="open-project-modal" 
+                 data-title="UI interactions of the week"
+                 data-image="./assets/images/blog-4.jpg"
+                 data-category="Design"
+                 data-date="2022-02-23"
+                 data-description="Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
+                </figure>
                 <div class="blog-content">
-
                   <div class="blog-meta">
                     <p class="blog-category">Design</p>
-
                     <span class="dot"></span>
-
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
-
                   <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
+                  <p class="blog-text">Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.</p>
               <a href="#">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
                 </figure>
 
+            <li class="blog-post-item">
+              <a href="#" class="open-project-modal" 
+                 data-title="The forgotten art of spacing"
+                 data-image="./assets/images/blog-5.jpg"
+                 data-category="Design"
+                 data-date="2022-02-23"
+                 data-description="Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
+                </figure>
                 <div class="blog-content">
-
                   <div class="blog-meta">
                     <p class="blog-category">Design</p>
-
                     <span class="dot"></span>
-
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
-
                   <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
+                  <p class="blog-text">Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="#">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
                 </figure>
 
+            <li class="blog-post-item">
+              <a href="#" class="open-project-modal" 
+                 data-title="Design digest #79"
+                 data-image="./assets/images/blog-6.jpg"
+                 data-category="Design"
+                 data-date="2022-02-23"
+                 data-description="Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+                </figure>
                 <div class="blog-content">
-
                   <div class="blog-meta">
                     <p class="blog-category">Design</p>
-
                     <span class="dot"></span>
-
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
-
                   <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
+                  <p class="blog-text">Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.</p>
 
         </section>
 
@@ -1110,6 +1100,38 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+
+  <script>
+    // Modal popup for project/blog details
+    document.addEventListener('DOMContentLoaded', function() {
+      var modal = document.getElementById('project-modal');
+      var modalTitle = document.getElementById('modal-title');
+      var modalImage = document.getElementById('modal-image');
+      var modalCategory = document.getElementById('modal-category');
+      var modalDate = document.getElementById('modal-date');
+      var modalDescription = document.getElementById('modal-description');
+      var closeModal = document.querySelector('.close-modal');
+      document.querySelectorAll('.open-project-modal').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          modalTitle.textContent = this.getAttribute('data-title');
+          modalImage.src = this.getAttribute('data-image');
+          modalCategory.textContent = this.getAttribute('data-category');
+          modalDate.textContent = this.getAttribute('data-date');
+          modalDescription.textContent = this.getAttribute('data-description');
+          modal.style.display = 'flex';
+        });
+      });
+      closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
 
   <!--
     - ionicon link
